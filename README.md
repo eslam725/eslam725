@@ -1,16 +1,16 @@
-## Hi there 👋
+# material card for weight fraction
+import openmc
 
-<!--
-**eslam725/eslam725** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+material = openmc.Material(name="Lithium-loaded Polyethylene")
+# using weight fraction
+material.add_nuclide('H1', 0.129407, percent_type='wo')
+material.add_nuclide('H2', 0.000026, percent_type='wo')
+material.add_nuclide('C12', 0.762091, percent_type='wo')
+material.add_nuclide('C13', 0.008476, percent_type='wo')
+material.add_nuclide('Li6', 0.007590, percent_type='wo')
+material.add_nuclide('Li7', 0.092410, percent_type='wo')
 
-Here are some ideas to get you started:
+material.set_density('g/cm3', 0.94)  # adjust as needed for polyethylene-lithium mix
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+materials = openmc.Materials([material])
+print (material)
