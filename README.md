@@ -1,5 +1,6 @@
-# material card for weight fraction
 import openmc
+# material card for weight fraction
+
 
 material = openmc.Material(name="Lithium-loaded Polyethylene")
 # using weight fraction
